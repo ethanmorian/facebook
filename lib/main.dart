@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import '/config/routes/routes.dart';
+import 'features/auth/presentation/screens/verify_email_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -18,11 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World'),
-        ),
-      ),
+      home: VerifyEmailScreen(),
       onGenerateRoute: Routes.onGenerateRoute,
     );
   }
