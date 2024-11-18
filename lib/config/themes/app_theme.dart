@@ -33,10 +33,10 @@ class AppTheme {
   static IconButtonThemeData? iconButtonTheme() {
     return const IconButtonThemeData(
       style: ButtonStyle(
-        iconColor: MaterialStatePropertyAll(
+        iconColor: WidgetStatePropertyAll(
           AppColors.blueColor,
         ),
-        backgroundColor: MaterialStatePropertyAll(
+        backgroundColor: WidgetStatePropertyAll(
           AppColors.blueColor,
         ),
       ),
