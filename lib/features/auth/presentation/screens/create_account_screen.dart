@@ -99,7 +99,9 @@ class _CreateAccountScreenState extends ConsumerState<CreateAccountScreen> {
                   },
                   child: PickImageWidget(image: image),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(
+                  height: 20,
+                ),
                 Row(
                   children: [
                     // First Name Text Field
@@ -138,7 +140,9 @@ class _CreateAccountScreenState extends ConsumerState<CreateAccountScreen> {
                     setState(() {});
                   },
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(
+                  height: 20,
+                ),
                 GenderPicker(
                   gender: gender,
                   onChanged: (value) {
