@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '/config/routes/routes.dart';
+import 'config/themes/app_theme.dart';
 import 'core/screens/home_screen.dart';
 import 'core/screens/loader.dart';
 import 'firebase_options.dart';
@@ -26,6 +27,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: AppTheme.appTheme(),
+      debugShowCheckedModeBanner: false,
       home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {

@@ -3,6 +3,7 @@ import 'package:facebook/features/auth/presentation/screens/create_account_scree
 import 'package:flutter/cupertino.dart';
 
 import '../../core/screens/home_screen.dart';
+import '../../features/posts/presentation/screens/create_post_screen.dart';
 
 class Routes {
   static Route onGenerateRoute(RouteSettings settings) {
@@ -11,6 +12,8 @@ class Routes {
         return _cupertinoRoute(const CreateAccountScreen());
       case HomeScreen.routeName:
         return _cupertinoRoute(const HomeScreen());
+      case CreatePostScreen.routeName:
+        return _cupertinoRoute(const CreatePostScreen());
       default:
         return _cupertinoRoute(
           ErrorScreen(error: 'Wrong Route provided ${settings.name}'),

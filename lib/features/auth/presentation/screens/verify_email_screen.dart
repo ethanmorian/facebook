@@ -40,7 +40,9 @@ class VerifyEmailScreen extends ConsumerWidget {
                     FirebaseAuth.instance.currentUser?.emailVerified;
                 if (emailVerified == true) {
                   // Fix this later
-                  Navigator.of(context).pushNamed(HomeScreen.routeName);
+                  Navigator.of(context).pushNamed(
+                    HomeScreen.routeName,
+                  );
                 }
               },
               label: 'Refresh',
