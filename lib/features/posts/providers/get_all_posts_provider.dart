@@ -14,7 +14,7 @@ final getAllPostsProvider = StreamProvider<Iterable<Post>>(
     final sub = FirebaseFirestore.instance
         .collection(FirebaseCollectionNames.posts)
         .orderBy(
-          FirebaseFieldNames.createdAt,
+          FirebaseFieldNames.datePublished,
           descending: true,
         )
         .snapshots()
