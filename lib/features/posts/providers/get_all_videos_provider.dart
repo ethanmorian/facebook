@@ -13,9 +13,12 @@ final getAllVideosProvider = StreamProvider<Iterable<Post>>(
 
     final sub = FirebaseFirestore.instance
         .collection(FirebaseCollectionNames.posts)
-        .where(FirebaseFieldNames.postType, isEqualTo: 'video')
+        .where(
+          FirebaseFieldNames.postType,
+          isEqualTo: 'video',
+        )
         .orderBy(
-          FirebaseFieldNames.createdAt,
+          FirebaseFieldNames.datePublished,
           descending: true,
         )
         .snapshots()
