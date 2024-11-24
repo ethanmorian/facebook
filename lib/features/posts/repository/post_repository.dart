@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:facebook/core/constants/firebase_collection_names.dart';
 import 'package:facebook/core/constants/firebase_field_names.dart';
+import 'package:facebook/features/posts/models/comment.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart' show immutable;
@@ -76,6 +77,66 @@ class PostRepository {
         _firestore
             .collection(FirebaseCollectionNames.posts)
             .doc(postId)
+            .update({
+          FirebaseFieldNames.likes: FieldValue.arrayUnion([authorId])
+        });
+      }
+
+      return null;
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  Future<String?> makeComment({
+    required String text,
+    required String postId,
+  }) async {
+    try {
+      final commentId = const Uuid().v1();
+      final authorId = _auth.currentUser!.uid;
+      final now = DateTime.now();
+
+      Comment comment = Comment(
+        commentId: commentId,
+        authorId: authorId,
+        postId: postId,
+        text: text,
+        createdAt: now,
+        likes: const [],
+      );
+
+      _firestore
+          .collection(FirebaseCollectionNames.comments)
+          .doc(commentId)
+          .set(
+            comment.toMap(),
+          );
+
+      return null;
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  Future<String?> likeDislikeComment({
+    required String commentId,
+    required List<String> likes,
+  }) async {
+    try {
+      final authorId = _auth.currentUser!.uid;
+
+      if (likes.contains(authorId)) {
+        _firestore
+            .collection(FirebaseCollectionNames.comments)
+            .doc(commentId)
+            .update({
+          FirebaseFieldNames.likes: FieldValue.arrayRemove([authorId])
+        });
+      } else {
+        _firestore
+            .collection(FirebaseCollectionNames.comments)
+            .doc(commentId)
             .update({
           FirebaseFieldNames.likes: FieldValue.arrayUnion([authorId])
         });
