@@ -5,14 +5,14 @@ import '/core/constants/app_colors.dart';
 import '/core/constants/constants.dart';
 
 class GenderPicker extends StatelessWidget {
+  final String? gender;
+  final Function(String? value) onChanged;
+
   const GenderPicker({
     super.key,
     required this.gender,
     required this.onChanged,
   });
-
-  final String? gender;
-  final Function(String? value) onChanged;
 
   @override
   Widget build(BuildContext context) {

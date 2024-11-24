@@ -7,10 +7,16 @@ class ProfileInfo extends ConsumerWidget {
   const ProfileInfo({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(
+    BuildContext context,
+    WidgetRef ref,
+  ) {
     return FutureBuilder(
       future: ref.read(authProvider).getUserInfo(),
-      builder: (context, snapshot) {
+      builder: (
+        context,
+        snapshot,
+      ) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Loader();
         }

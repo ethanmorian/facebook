@@ -59,7 +59,9 @@ class Constants {
     VideosScreen(),
     ProfileScreen(),
     Center(
-      child: Text('Settings Screen'),
+      child: Text(
+        'Settings Screen',
+      ),
     ),
   ];
 

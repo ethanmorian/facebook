@@ -16,9 +16,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final _formKey = GlobalKey<FormState>();
 
 class CreateAccountScreen extends ConsumerStatefulWidget {
-  const CreateAccountScreen({super.key});
-
   static const routeName = '/create-account';
+
+  const CreateAccountScreen({super.key});
 
   @override
   ConsumerState<CreateAccountScreen> createState() =>

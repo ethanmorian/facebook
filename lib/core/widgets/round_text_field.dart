@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
 class RoundTextField extends StatelessWidget {
+  final TextEditingController controller;
+  final String hintText;
+  final bool isPassword;
+  final TextInputType keyboardType;
+  final TextInputAction textInputAction;
+  final String? Function(String?)? validator;
+
   const RoundTextField({
     super.key,
     required this.controller,
@@ -10,13 +17,6 @@ class RoundTextField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.validator,
   });
-
-  final TextEditingController controller;
-  final String hintText;
-  final bool isPassword;
-  final TextInputType keyboardType;
-  final TextInputAction textInputAction;
-  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {

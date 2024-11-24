@@ -8,6 +8,7 @@ import 'package:image_picker/image_picker.dart';
 Future<File?> pickImage() async {
   File? image;
   final picker = ImagePicker();
+
   final file = await picker.pickImage(
     source: ImageSource.gallery,
     maxHeight: 720,
@@ -24,6 +25,7 @@ Future<File?> pickImage() async {
 Future<File?> pickVideo() async {
   File? video;
   final picker = ImagePicker();
+
   final file = await picker.pickVideo(
     source: ImageSource.gallery,
     maxDuration: const Duration(
@@ -39,9 +41,7 @@ Future<File?> pickVideo() async {
 }
 
 // Show Toast Message
-void showToastMessage({
-  required String text,
-}) {
+void showToastMessage({required String text}) {
   Fluttertoast.showToast(
     msg: text,
     backgroundColor: Colors.black54,

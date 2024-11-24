@@ -7,9 +7,7 @@ import '/core/constants/app_colors.dart';
 import '/core/constants/constants.dart';
 
 class FeedMakePostWidget extends StatelessWidget {
-  const FeedMakePostWidget({
-    super.key,
-  });
+  const FeedMakePostWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

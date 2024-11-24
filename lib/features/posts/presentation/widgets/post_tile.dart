@@ -15,10 +15,16 @@ import '/features/posts/providers/posts_provider.dart';
 class PostTile extends ConsumerWidget {
   final Post post;
 
-  const PostTile({super.key, required this.post});
+  const PostTile({
+    super.key,
+    required this.post,
+  });
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(
+    BuildContext context,
+    WidgetRef ref,
+  ) {
     return Container(
       color: Colors.white,
       child: Column(
@@ -75,7 +81,10 @@ class PostButtons extends ConsumerWidget {
   });
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(
+    BuildContext context,
+    WidgetRef ref,
+  ) {
     final isLiked = post.likes.contains(FirebaseAuth.instance.currentUser!.uid);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,

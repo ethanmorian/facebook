@@ -4,14 +4,14 @@ import '/core/constants/app_colors.dart';
 import '/core/constants/extensions.dart';
 
 class BirthdayPicker extends StatelessWidget {
+  final DateTime dateTime;
+  final VoidCallback onPressed;
+
   const BirthdayPicker({
     super.key,
     required this.dateTime,
     required this.onPressed,
   });
-
-  final DateTime dateTime;
-  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {

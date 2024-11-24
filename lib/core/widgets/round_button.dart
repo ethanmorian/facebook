@@ -2,6 +2,11 @@ import 'package:facebook/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class RoundButton extends StatelessWidget {
+  final VoidCallback? onPressed;
+  final String label;
+  final Color color;
+  final double height;
+
   const RoundButton({
     super.key,
     required this.onPressed,
@@ -9,11 +14,6 @@ class RoundButton extends StatelessWidget {
     this.color = AppColors.lightBlueColor,
     this.height = 50,
   });
-
-  final VoidCallback? onPressed;
-  final String label;
-  final Color color;
-  final double height;
 
   @override
   Widget build(BuildContext context) {

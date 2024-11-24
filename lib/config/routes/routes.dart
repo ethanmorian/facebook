@@ -16,8 +16,7 @@ class Routes {
         return _cupertinoRoute(const CreatePostScreen());
       default:
         return _cupertinoRoute(
-          ErrorScreen(error: 'Wrong Route provided ${settings.name}'),
-        );
+            ErrorScreen(error: 'Wrong Route provided ${settings.name}'));
     }
   }
 
