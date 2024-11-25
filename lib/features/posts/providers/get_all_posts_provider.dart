@@ -7,7 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/post.dart';
 
-final getAllPostsProvider = StreamProvider<Iterable<Post>>(
+final getAllPostsProvider = StreamProvider.autoDispose<Iterable<Post>>(
   (ref) {
     final controller = StreamController<Iterable<Post>>();
 

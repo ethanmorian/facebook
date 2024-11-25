@@ -6,12 +6,17 @@ import 'package:facebook/core/constants/firebase_field_names.dart';
 import 'package:facebook/features/posts/models/comment.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final getAllCommentsProvider = StreamProvider<Iterable<Comment>>(
-  (ref) {
+final getAllCommentsProvider =
+    StreamProvider.autoDispose.family<Iterable<Comment>, String>(
+  (ref, String postId) {
     final controller = StreamController<Iterable<Comment>>();
 
     final sub = FirebaseFirestore.instance
         .collection(FirebaseCollectionNames.comments)
+        .where(
+          FirebaseFieldNames.postId,
+          isEqualTo: postId,
+        )
         .orderBy(
           FirebaseFieldNames.createdAt,
           descending: true,
