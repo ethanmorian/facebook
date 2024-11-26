@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class CommentsScreen extends StatelessWidget {
   static const routeName = '/comments';
-  
+
   final String postId;
 
   const CommentsScreen({
