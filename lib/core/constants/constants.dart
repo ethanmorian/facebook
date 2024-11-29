@@ -13,7 +13,7 @@ class Constants {
 
   // demo profile urls
   static const String maleProfilePic =
-      'https://jeremyveldman.com/wp-content/uploads/2019/08/Generic-Profile-Pic.jpg';
+      'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';
 
   static const String profilePicBlank =
       'https://t3.ftcdn.net/jpg/05/16/27/58/240_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg';
