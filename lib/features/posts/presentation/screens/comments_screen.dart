@@ -19,6 +19,12 @@ class CommentsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Comments'),
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(Icons.arrow_back),
+        ),
       ),
       body: Column(
         children: [
@@ -26,9 +32,7 @@ class CommentsScreen extends StatelessWidget {
           CommentsList(postId: postId),
 
           // Comment Text field
-          CommentTextField(
-            postId: postId,
-          ),
+          CommentTextField(postId: postId),
         ],
       ),
     );

@@ -84,7 +84,14 @@ class _CreateAccountScreenState extends ConsumerState<CreateAccountScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.realWhiteColor,
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(Icons.arrow_back),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: Constants.defaultPadding,
@@ -99,9 +106,7 @@ class _CreateAccountScreenState extends ConsumerState<CreateAccountScreen> {
                   },
                   child: PickImageWidget(image: image),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
                 Row(
                   children: [
                     // First Name Text Field
@@ -113,9 +118,7 @@ class _CreateAccountScreenState extends ConsumerState<CreateAccountScreen> {
                         validator: validateName,
                       ),
                     ),
-                    const SizedBox(
-                      width: 10,
-                    ),
+                    const SizedBox(width: 10),
                     // Last Name Text Field
                     Expanded(
                       child: RoundTextField(
@@ -127,9 +130,7 @@ class _CreateAccountScreenState extends ConsumerState<CreateAccountScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
                 BirthdayPicker(
                   dateTime: birthday ?? DateTime.now(),
                   onPressed: () async {
@@ -140,9 +141,7 @@ class _CreateAccountScreenState extends ConsumerState<CreateAccountScreen> {
                     setState(() {});
                   },
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
                 GenderPicker(
                   gender: gender,
                   onChanged: (value) {
@@ -150,9 +149,7 @@ class _CreateAccountScreenState extends ConsumerState<CreateAccountScreen> {
                     setState(() {});
                   },
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
                 // Phone number / email text field
                 RoundTextField(
                   controller: _emailController,
@@ -161,9 +158,7 @@ class _CreateAccountScreenState extends ConsumerState<CreateAccountScreen> {
                   keyboardType: TextInputType.emailAddress,
                   validator: validateEmail,
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
                 // Password Text Field
                 RoundTextField(
                   controller: _passwordController,
@@ -173,13 +168,9 @@ class _CreateAccountScreenState extends ConsumerState<CreateAccountScreen> {
                   validator: validatePassword,
                   isPassword: true,
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
                 isLoading
-                    ? const Center(
-                        child: CircularProgressIndicator(),
-                      )
+                    ? const Center(child: CircularProgressIndicator())
                     : RoundButton(
                         onPressed: createAccount,
                         label: 'Create Account',

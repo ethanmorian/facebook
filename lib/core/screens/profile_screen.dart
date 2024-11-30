@@ -24,71 +24,69 @@ class ProfileScreen extends ConsumerWidget {
   });
 
   @override
-  Widget build(
-    BuildContext context,
-    WidgetRef ref,
-  ) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final myUid = FirebaseAuth.instance.currentUser!.uid;
     final uid = userId ?? myUid;
     final userInfo = ref.watch(getUserInfoAsStreamByIdProvider(uid));
 
     return userInfo.when(
       data: (user) {
-        return SafeArea(
-          child: Scaffold(
-            appBar: userId != myUid
-                ? AppBar(
-                    title: const Text('Profile Screen'),
-                  )
-                : null,
-            backgroundColor: AppColors.whiteColor,
-            body: Padding(
-              padding: Constants.defaultPadding,
-              child: Column(
-                children: [
-                  CircleAvatar(
-                    radius: 50,
-                    backgroundImage: NetworkImage(user.profilePicUrl),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    user.fullName,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 21,
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  userId == myUid
-                      ? _buildAddToStoryButton()
-                      : AddFriendButton(user: user),
-                  const SizedBox(height: 10),
-                  RoundButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed(
-                        ChatScreen.routeName,
-                        arguments: {'userId': userId},
-                      );
+        return Scaffold(
+          appBar: userId != myUid
+              ? AppBar(
+                  title: const Text('Profile Screen'),
+                  leading: InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
                     },
-                    label: 'Send Message',
-                    color: Colors.transparent,
+                    child: const Icon(Icons.arrow_back),
                   ),
-                  const SizedBox(height: 20),
-                  _buildProfileInfo(
-                    email: user.email,
-                    gender: user.gender,
-                    birthday: user.birthDay,
+                )
+              : null,
+          backgroundColor: AppColors.whiteColor,
+          body: Padding(
+            padding: Constants.defaultPadding,
+            child: Column(
+              children: [
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: NetworkImage(user.profilePicUrl),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  user.fullName,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 21,
                   ),
-                ],
-              ),
+                ),
+                const SizedBox(height: 20),
+                userId == myUid
+                    ? _buildAddToStoryButton()
+                    : AddFriendButton(user: user),
+                const SizedBox(height: 10),
+                RoundButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(
+                      ChatScreen.routeName,
+                      arguments: {'userId': userId},
+                    );
+                  },
+                  label: 'Send Message',
+                  color: Colors.transparent,
+                ),
+                const SizedBox(height: 20),
+                _buildProfileInfo(
+                  email: user.email,
+                  gender: user.gender,
+                  birthday: user.birthDay,
+                ),
+              ],
             ),
           ),
         );
       },
-      error: (
-        error,
-        stackTrace,
-      ) {
+      error: (error, stackTrace) {
         return ErrorScreen(error: error.toString());
       },
       loading: () {

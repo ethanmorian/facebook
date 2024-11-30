@@ -44,11 +44,15 @@ class _CreatePostScreenState extends ConsumerState<CreatePostScreen> {
         actions: [
           TextButton(
             onPressed: makePost,
-            child: const Text(
-              'Post',
-            ),
+            child: const Text('Post'),
           ),
         ],
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(Icons.arrow_back),
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -72,9 +76,7 @@ class _CreatePostScreenState extends ConsumerState<CreatePostScreen> {
                 minLines: 1,
                 maxLines: 10,
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               file != null
                   ? ImageVideoView(
                       file: file!,
@@ -92,13 +94,9 @@ class _CreatePostScreenState extends ConsumerState<CreatePostScreen> {
                         setState(() {});
                       },
                     ),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               isLoading
-                  ? const Center(
-                      child: CircularProgressIndicator(),
-                    )
+                  ? const Center(child: CircularProgressIndicator())
                   : RoundButton(
                       onPressed: makePost,
                       label: 'Post',

@@ -3,12 +3,10 @@ import 'package:facebook/core/screens/loader.dart';
 import 'package:facebook/core/utils/utils.dart';
 import 'package:facebook/features/chat/presentation/widgets/chats_user_info.dart';
 import 'package:facebook/features/chat/presentation/widgets/messages_list.dart';
+import 'package:facebook/features/chat/providers/chat_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'package:facebook/features/chat/providers/chat_provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:image_picker/image_picker.dart';
 
 class ChatScreen extends ConsumerStatefulWidget {
   static const routeName = '/chat-screen';
@@ -56,9 +54,11 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
         return Scaffold(
           backgroundColor: AppColors.realWhiteColor,
           appBar: AppBar(
-            leading: IconButton(
-              onPressed: Navigator.of(context).pop,
-              icon: const Icon(
+            leading: InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: const Icon(
                 Icons.arrow_back_ios,
                 color: AppColors.messengerBlue,
               ),
