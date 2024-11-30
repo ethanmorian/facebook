@@ -1,6 +1,7 @@
 import 'package:facebook/core/constants/app_colors.dart';
 import 'package:facebook/core/constants/constants.dart';
 import 'package:facebook/core/widgets/round_icon_button.dart';
+import 'package:facebook/features/chat/presentation/screens/chats_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -52,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               setState(() {});
             },
           ),
+          automaticallyImplyLeading: false,
         ),
         body: TabBarView(
           controller: _tabController,
@@ -70,11 +72,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         ),
       );
 
-  Widget _buildSearchWidget() => const RoundIconButton(
-        icon: FontAwesomeIcons.magnifyingGlass,
-      );
+  Widget _buildSearchWidget() =>
+      const RoundIconButton(icon: FontAwesomeIcons.magnifyingGlass);
 
-  Widget _buildMessengerWidget() => const RoundIconButton(
-        icon: FontAwesomeIcons.facebookMessenger,
+  Widget _buildMessengerWidget() => InkWell(
+        onTap: () {
+          Navigator.of(context).pushNamed(ChatsScreen.routeName);
+        },
+        child: const RoundIconButton(icon: FontAwesomeIcons.facebookMessenger),
       );
 }
