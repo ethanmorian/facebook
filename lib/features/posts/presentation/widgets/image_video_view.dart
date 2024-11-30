@@ -16,13 +16,9 @@ class ImageVideoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (fileType == 'image') {
-      return Image.file(
-        file,
-      );
+      return Image.file(file);
     } else {
-      return VideoView(
-        video: file,
-      );
+      return VideoView(video: file);
     }
   }
 }

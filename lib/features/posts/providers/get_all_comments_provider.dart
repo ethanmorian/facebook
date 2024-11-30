@@ -8,7 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final getAllCommentsProvider =
     StreamProvider.autoDispose.family<Iterable<Comment>, String>(
-  (ref, String postId) {
+  (ref, postId) {
     final controller = StreamController<Iterable<Comment>>();
 
     final sub = FirebaseFirestore.instance

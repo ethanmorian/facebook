@@ -40,17 +40,11 @@ String? validateName(String? name) {
 
 final today = DateTime.now();
 // 18 years ago
-final initialDate = DateTime.now().subtract(const Duration(
-  days: 365 * 18,
-));
+final initialDate = DateTime.now().subtract(const Duration(days: 365 * 18));
 // User can be born anytime after 1900 AD
-final firstDate = DateTime(
-  1900,
-);
+final firstDate = DateTime(1900);
 // User should at least be 7 years old
-final lastDate = DateTime.now().subtract(const Duration(
-  days: 365 * 7,
-));
+final lastDate = DateTime.now().subtract(const Duration(days: 365 * 7));
 
 Future<DateTime?> pickSimpleDate({
   required BuildContext context,

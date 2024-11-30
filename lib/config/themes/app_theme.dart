@@ -16,17 +16,13 @@ class AppTheme {
     return const AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      iconTheme: IconThemeData(
-        color: AppColors.blackColor,
-      ),
+      iconTheme: IconThemeData(color: AppColors.blackColor),
     );
   }
 
   // Button theme
   static ButtonThemeData? buttonTheme() {
-    return const ButtonThemeData(
-      buttonColor: Colors.blue,
-    );
+    return const ButtonThemeData(buttonColor: Colors.blue);
   }
 
   // Icon Button Theme
@@ -34,7 +30,7 @@ class AppTheme {
     return const IconButtonThemeData(
       style: ButtonStyle(
         iconColor: WidgetStatePropertyAll(AppColors.blueColor),
-        backgroundColor: WidgetStatePropertyAll(AppColors.blueColor),
+        // backgroundColor: WidgetStatePropertyAll(AppColors.blueColor),
       ),
     );
   }

@@ -1,16 +1,15 @@
-import 'package:facebook/core/constants/extensions.dart';
-import 'package:facebook/features/posts/presentation/widgets/round_like_icon.dart';
-import 'package:facebook/features/posts/providers/posts_provider.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:facebook/core/constants/app_colors.dart';
+import 'package:facebook/core/constants/extensions.dart';
 import 'package:facebook/core/screens/error_screen.dart';
 import 'package:facebook/core/screens/loader.dart';
 import 'package:facebook/features/auth/providers/get_user_info_by_id_provider.dart';
 import 'package:facebook/features/posts/models/comment.dart';
+import 'package:facebook/features/posts/presentation/widgets/round_like_icon.dart';
 import 'package:facebook/features/posts/presentation/widgets/round_profile_tile.dart';
+import 'package:facebook/features/posts/providers/posts_provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CommentTile extends StatelessWidget {
   final Comment comment;
@@ -27,14 +26,10 @@ class CommentTile extends StatelessWidget {
       child: Column(
         children: [
           // Comment header
-          CommentHeader(
-            comment: comment,
-          ),
+          CommentHeader(comment: comment),
 
           // Comment Footer
-          CommentFooter(
-            comment: comment,
-          ),
+          CommentFooter(comment: comment),
         ],
       ),
     );
@@ -51,7 +46,9 @@ class CommentHeader extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final userInfo = ref.watch(getUserInfoByIdProvider(comment.authorId));
+    final userInfo = ref.watch(
+      getUserInfoByIdProvider(comment.authorId),
+    );
 
     return userInfo.when(
       data: (user) {
@@ -77,9 +74,7 @@ class CommentHeader extends ConsumerWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    Text(
-                      comment.text,
-                    ),
+                    Text(comment.text),
                   ],
                 ),
               ),
@@ -87,10 +82,7 @@ class CommentHeader extends ConsumerWidget {
           ],
         );
       },
-      error: (
-        error,
-        stackTrace,
-      ) {
+      error: (error, stackTrace) {
         return ErrorScreen(error: error.toString());
       },
       loading: () {
@@ -121,9 +113,7 @@ class CommentFooter extends StatelessWidget {
       ) {
         return Row(
           children: [
-            Text(
-              comment.createdAt.fromNow(),
-            ),
+            Text(comment.createdAt.fromNow()),
             TextButton(
               onPressed: () async {
                 await ref.read(postsProvider).likeDislikeComment(
@@ -134,21 +124,15 @@ class CommentFooter extends StatelessWidget {
               child: Text(
                 'like',
                 style: TextStyle(
-                  color:
-                      isLiked ? AppColors.blueColor : AppColors.darkGreyColor,
-                ),
+                    color: isLiked
+                        ? AppColors.blueColor
+                        : AppColors.darkGreyColor),
               ),
             ),
-            const SizedBox(
-              width: 15,
-            ),
+            const SizedBox(width: 15),
             const RoundLikeIcon(),
-            const SizedBox(
-              width: 5,
-            ),
-            Text(
-              comment.likes.length.toString(),
-            ),
+            const SizedBox(width: 5),
+            Text(comment.likes.length.toString()),
           ],
         );
       },

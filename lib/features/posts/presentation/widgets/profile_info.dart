@@ -7,10 +7,7 @@ class ProfileInfo extends ConsumerWidget {
   const ProfileInfo({super.key});
 
   @override
-  Widget build(
-    BuildContext context,
-    WidgetRef ref,
-  ) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return FutureBuilder(
       future: ref.read(authProvider).getUserInfo(),
       builder: (
@@ -29,13 +26,9 @@ class ProfileInfo extends ConsumerWidget {
             children: [
               CircleAvatar(
                 radius: 20,
-                backgroundImage: NetworkImage(
-                  user!.profilePicUrl,
-                ),
+                backgroundImage: NetworkImage(user!.profilePicUrl),
               ),
-              const SizedBox(
-                width: 10,
-              ),
+              const SizedBox(width: 10),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,9 +53,7 @@ class ProfileInfo extends ConsumerWidget {
           );
         }
 
-        return Text(
-          snapshot.error.toString(),
-        );
+        return Text(snapshot.error.toString());
       },
     );
   }

@@ -42,11 +42,8 @@ class Post {
       postType: map[FirebaseFieldNames.postType] ?? '',
       fileUrl: map[FirebaseFieldNames.fileUrl] ?? '',
       createdAt: DateTime.fromMillisecondsSinceEpoch(
-        map[FirebaseFieldNames.datePublished] ?? 0,
-      ),
-      likes: List<String>.from(
-        map[FirebaseFieldNames.likes] ?? [],
-      ),
+          map[FirebaseFieldNames.datePublished] ?? 0),
+      likes: List<String>.from(map[FirebaseFieldNames.likes] ?? []),
     );
   }
 }

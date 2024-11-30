@@ -27,10 +27,7 @@ class _RequestsListState extends ConsumerState<RequestsList> {
           },
         );
       },
-      error: (
-        error,
-        stackTrace,
-      ) {
+      error: (error, stackTrace) {
         return SliverToBoxAdapter(
           child: ErrorScreen(error: error.toString()),
         );

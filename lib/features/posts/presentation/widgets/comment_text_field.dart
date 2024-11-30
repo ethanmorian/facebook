@@ -47,9 +47,7 @@ class _CommentTextFieldState extends ConsumerState<CommentTextField> {
       color: Colors.white,
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        padding: const EdgeInsets.only(
-          left: 15,
-        ),
+        padding: const EdgeInsets.only(left: 15),
         decoration: BoxDecoration(
           color: AppColors.greyColor,
           borderRadius: BorderRadius.circular(25),
@@ -61,9 +59,7 @@ class _CommentTextFieldState extends ConsumerState<CommentTextField> {
             border: InputBorder.none,
             suffixIcon: IconButton(
               onPressed: makeComment,
-              icon: const Icon(
-                Icons.send,
-              ),
+              icon: const Icon(Icons.send),
             ),
           ),
         ),

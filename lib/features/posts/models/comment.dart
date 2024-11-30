@@ -37,8 +37,7 @@ class Comment {
       postId: map[FirebaseFieldNames.postId] ?? '',
       text: map[FirebaseFieldNames.text] ?? '',
       createdAt: DateTime.fromMillisecondsSinceEpoch(
-        map[FirebaseFieldNames.createdAt] ?? 0,
-      ),
+          map[FirebaseFieldNames.createdAt] ?? 0),
       likes: List<String>.from(
         (map[FirebaseFieldNames.likes] ?? []),
       ),

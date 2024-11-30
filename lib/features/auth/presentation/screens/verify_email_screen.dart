@@ -30,9 +30,7 @@ class VerifyEmailScreen extends ConsumerWidget {
               },
               label: 'Verify Email',
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             RoundButton(
               onPressed: () async {
                 await FirebaseAuth.instance.currentUser!.reload();
@@ -40,16 +38,12 @@ class VerifyEmailScreen extends ConsumerWidget {
                     FirebaseAuth.instance.currentUser?.emailVerified;
                 if (emailVerified == true) {
                   // Fix this later
-                  Navigator.of(context).pushNamed(
-                    HomeScreen.routeName,
-                  );
+                  Navigator.of(context).pushNamed(HomeScreen.routeName);
                 }
               },
               label: 'Refresh',
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             RoundButton(
               onPressed: () {
                 ref.read(authProvider).signOut();

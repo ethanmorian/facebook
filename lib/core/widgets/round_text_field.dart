@@ -25,9 +25,7 @@ class RoundTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
       ),
       obscureText: isPassword,

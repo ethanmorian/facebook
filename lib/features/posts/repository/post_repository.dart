@@ -46,9 +46,10 @@ class PostRepository {
       );
 
       // Post to firestore
-      _firestore.collection(FirebaseCollectionNames.posts).doc(postId).set(
-            post.toMap(),
-          );
+      _firestore
+          .collection(FirebaseCollectionNames.posts)
+          .doc(postId)
+          .set(post.toMap());
 
       return null;
     } catch (e) {
@@ -66,20 +67,18 @@ class PostRepository {
 
       if (likes.contains(authorId)) {
         // we already liked the post
-        _firestore
-            .collection(FirebaseCollectionNames.posts)
-            .doc(postId)
-            .update({
-          FirebaseFieldNames.likes: FieldValue.arrayRemove([authorId])
-        });
+        _firestore.collection(FirebaseCollectionNames.posts).doc(postId).update(
+          {
+            FirebaseFieldNames.likes: FieldValue.arrayRemove([authorId]),
+          },
+        );
       } else {
         // we need to like the post
-        _firestore
-            .collection(FirebaseCollectionNames.posts)
-            .doc(postId)
-            .update({
-          FirebaseFieldNames.likes: FieldValue.arrayUnion([authorId])
-        });
+        _firestore.collection(FirebaseCollectionNames.posts).doc(postId).update(
+          {
+            FirebaseFieldNames.likes: FieldValue.arrayUnion([authorId]),
+          },
+        );
       }
 
       return null;
@@ -109,9 +108,7 @@ class PostRepository {
       _firestore
           .collection(FirebaseCollectionNames.comments)
           .doc(commentId)
-          .set(
-            comment.toMap(),
-          );
+          .set(comment.toMap());
 
       return null;
     } catch (e) {
@@ -130,16 +127,20 @@ class PostRepository {
         _firestore
             .collection(FirebaseCollectionNames.comments)
             .doc(commentId)
-            .update({
-          FirebaseFieldNames.likes: FieldValue.arrayRemove([authorId])
-        });
+            .update(
+          {
+            FirebaseFieldNames.likes: FieldValue.arrayRemove([authorId]),
+          },
+        );
       } else {
         _firestore
             .collection(FirebaseCollectionNames.comments)
             .doc(commentId)
-            .update({
-          FirebaseFieldNames.likes: FieldValue.arrayUnion([authorId])
-        });
+            .update(
+          {
+            FirebaseFieldNames.likes: FieldValue.arrayUnion([authorId]),
+          },
+        );
       }
 
       return null;

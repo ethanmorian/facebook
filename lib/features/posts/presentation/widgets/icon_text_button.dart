@@ -26,12 +26,8 @@ class IconTextButton extends StatelessWidget {
             size: 20,
             color: color,
           ),
-          const SizedBox(
-            width: 8,
-          ),
-          Text(
-            label,
-          ),
+          const SizedBox(width: 8),
+          Text(label),
         ],
       ),
     );

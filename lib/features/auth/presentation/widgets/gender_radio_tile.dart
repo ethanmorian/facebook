@@ -19,9 +19,7 @@ class GenderRadioTile extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title,
-        ),
+        Text(title),
         Radio.adaptive(
           value: value,
           groupValue: selectedValue,

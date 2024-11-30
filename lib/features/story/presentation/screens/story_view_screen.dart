@@ -1,12 +1,11 @@
 import 'package:facebook/core/constants/app_colors.dart';
 import 'package:facebook/core/widgets/post_info_tile.dart';
+import 'package:facebook/features/story/models/story.dart';
 import 'package:facebook/features/story/providers/story_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:story_view/story_view.dart';
-
-import 'package:facebook/features/story/models/story.dart';
 
 class StoryViewScreen extends StatefulWidget {
   static const routeName = '/story-view';

@@ -74,9 +74,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     textInputAction: TextInputAction.next,
                     validator: validateEmail,
                   ),
-                  const SizedBox(
-                    height: 15,
-                  ),
+                  const SizedBox(height: 15),
                   RoundTextField(
                     controller: _passwordController,
                     hintText: 'Password',
@@ -85,21 +83,15 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     isPassword: true,
                     validator: validatePassword,
                   ),
-                  const SizedBox(
-                    height: 15,
-                  ),
+                  const SizedBox(height: 15),
                   RoundButton(
                     onPressed: login,
                     label: 'Login',
                   ),
-                  const SizedBox(
-                    height: 15,
-                  ),
+                  const SizedBox(height: 15),
                   const Text(
                     'Forget Password',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
+                    style: TextStyle(fontSize: 18),
                   ),
                 ],
               ),
@@ -108,9 +100,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               children: [
                 RoundButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed(
-                      CreateAccountScreen.routeName,
-                    );
+                    Navigator.of(context)
+                        .pushNamed(CreateAccountScreen.routeName);
                   },
                   label: 'Create new account',
                   color: Colors.transparent,

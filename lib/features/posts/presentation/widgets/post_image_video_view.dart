@@ -17,9 +17,7 @@ class PostImageVideoView extends StatelessWidget {
     if (fileType == 'image') {
       return Image.network(fileUrl);
     } else {
-      return NetworkVideoView(
-        videoUrl: fileUrl,
-      );
+      return NetworkVideoView(videoUrl: fileUrl);
     }
   }
 }

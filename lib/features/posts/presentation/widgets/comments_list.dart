@@ -23,9 +23,7 @@ class CommentsList extends ConsumerWidget {
             itemCount: commentsList.length,
             itemBuilder: (context, index) {
               final comment = commentsList.elementAt(index);
-              return CommentTile(
-                comment: comment,
-              );
+              return CommentTile(comment: comment);
             },
           );
         },

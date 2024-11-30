@@ -14,16 +14,12 @@ class FeedMakePostWidget extends StatelessWidget {
     return SliverToBoxAdapter(
       child: GestureDetector(
         onTap: () {
-          Navigator.of(context).pushNamed(
-            CreatePostScreen.routeName,
-          );
+          Navigator.of(context).pushNamed(CreatePostScreen.routeName);
         },
         child: Container(
           color: Colors.white,
           child: Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 10,
-            ),
+            padding: const EdgeInsets.symmetric(vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -53,13 +49,9 @@ class FeedMakePostWidget extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
-          border: Border.all(
-            color: AppColors.darkGreyColor,
-          ),
+          border: Border.all(color: AppColors.darkGreyColor),
         ),
-        child: const Text(
-          'What\'s on your mind?',
-        ),
+        child: const Text('What\'s on your mind?'),
       ),
     );
   }

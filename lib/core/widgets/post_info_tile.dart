@@ -16,10 +16,7 @@ class PostInfoTile extends ConsumerWidget {
   });
 
   @override
-  Widget build(
-    BuildContext context,
-    WidgetRef ref,
-  ) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final userInfo = ref.watch(getUserInfoByIdProvider(userId));
     return userInfo.when(
       data: (user) {
@@ -39,14 +36,10 @@ class PostInfoTile extends ConsumerWidget {
                   );
                 },
                 child: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                    user.profilePicUrl,
-                  ),
+                  backgroundImage: NetworkImage(user.profilePicUrl),
                 ),
               ),
-              const SizedBox(
-                width: 10,
-              ),
+              const SizedBox(width: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -67,17 +60,13 @@ class PostInfoTile extends ConsumerWidget {
                 ],
               ),
               const Spacer(),
-              const Icon(
-                Icons.more_horiz,
-              ),
+              const Icon(Icons.more_horiz),
             ],
           ),
         );
       },
       error: (error, stackTrace) {
-        return Text(
-          error.toString(),
-        );
+        return Text(error.toString());
       },
       loading: () {
         return const Loader();

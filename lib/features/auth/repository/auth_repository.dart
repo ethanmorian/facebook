@@ -67,9 +67,7 @@ class AuthRepository {
         return null;
       }
 
-      final taskSnapshot = await path.putFile(
-        image,
-      );
+      final taskSnapshot = await path.putFile(image);
       final downloadUrl = await taskSnapshot.ref.getDownloadURL();
 
       UserModel user = UserModel(
@@ -89,9 +87,7 @@ class AuthRepository {
       await _firestore
           .collection(FirebaseCollectionNames.users)
           .doc(FirebaseAuth.instance.currentUser!.uid)
-          .set(
-            user.toMap(),
-          );
+          .set(user.toMap());
 
       return credential;
     } catch (e) {

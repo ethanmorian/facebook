@@ -21,10 +21,7 @@ class PostTile extends ConsumerWidget {
   });
 
   @override
-  Widget build(
-    BuildContext context,
-    WidgetRef ref,
-  ) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       color: Colors.white,
       child: Column(
@@ -41,9 +38,7 @@ class PostTile extends ConsumerWidget {
               horizontal: 15,
               vertical: 5,
             ),
-            child: Text(
-              post.content,
-            ),
+            child: Text(post.content),
           ),
           // Post Video / Image
           PostImageVideoView(
@@ -81,10 +76,7 @@ class PostButtons extends ConsumerWidget {
   });
 
   @override
-  Widget build(
-    BuildContext context,
-    WidgetRef ref,
-  ) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final isLiked = post.likes.contains(FirebaseAuth.instance.currentUser!.uid);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -135,12 +127,8 @@ class PostStats extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         const RoundLikeIcon(),
-        const SizedBox(
-          width: 5,
-        ),
-        Text(
-          '${likes.length}',
-        ),
+        const SizedBox(width: 5),
+        Text('${likes.length}'),
       ],
     );
   }

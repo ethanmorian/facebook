@@ -16,26 +16,14 @@ class VideosScreen extends ConsumerWidget {
       data: (postsList) {
         return ListView.separated(
           itemCount: postsList.length,
-          separatorBuilder: (
-            context,
-            index,
-          ) =>
-              const SizedBox(
-            height: 8,
-          ),
-          itemBuilder: (
-            context,
-            index,
-          ) {
+          separatorBuilder: (context, index) => const SizedBox(height: 8),
+          itemBuilder: (context, index) {
             final post = postsList.elementAt(index);
             return PostTile(post: post);
           },
         );
       },
-      error: (
-        error,
-        stackTrace,
-      ) {
+      error: (error, stackTrace) {
         return ErrorScreen(error: error.toString());
       },
       loading: () {

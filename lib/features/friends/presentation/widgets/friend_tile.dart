@@ -15,10 +15,7 @@ class FriendTile extends ConsumerWidget {
   });
 
   @override
-  Widget build(
-    BuildContext context,
-    WidgetRef ref,
-  ) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final userData = ref.watch(
       getUserInfoAsStreamByIdProvider(userId),
     );
@@ -53,10 +50,7 @@ class FriendTile extends ConsumerWidget {
           ),
         );
       },
-      error: (
-        error,
-        stackTrace,
-      ) {
+      error: (error, stackTrace) {
         return ErrorScreen(error: error.toString());
       },
       loading: () {
