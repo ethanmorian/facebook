@@ -4,6 +4,8 @@ import 'package:facebook/features/posts/presentation/screens/posts_screen.dart';
 import 'package:facebook/features/posts/presentation/screens/videos_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/setting_screen.dart';
+
 class Constants {
   // Default padding for screens
   static const defaultPadding = EdgeInsets.symmetric(
@@ -58,11 +60,7 @@ class Constants {
     FriendsScreen(),
     VideosScreen(),
     ProfileScreen(),
-    Center(
-      child: Text(
-        'Settings Screen',
-      ),
-    ),
+    SettingScreen(),
   ];
 
   Constants._();
