@@ -39,7 +39,11 @@ class AddStoryTile extends StatelessWidget {
                   right: 10,
                   child: CircleAvatar(
                     radius: 16,
-                    child: Icon(Icons.add),
+                    backgroundColor: AppColors.blueColor,
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 const Positioned(
