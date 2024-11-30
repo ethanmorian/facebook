@@ -22,9 +22,8 @@ class _VideoViewState extends State<VideoView> {
 
   @override
   void initState() {
-    _videoController = VideoPlayerController.file(
-      widget.video,
-    )..initialize().then((value) {
+    _videoController = VideoPlayerController.file(widget.video)
+      ..initialize().then((value) {
         setState(() {});
       });
     super.initState();
@@ -48,8 +47,8 @@ class _VideoViewState extends State<VideoView> {
             bottom: 0,
             left: 0,
             right: 0,
-            child: IconButton(
-              onPressed: () {
+            child: InkWell(
+              onTap: () {
                 if (isPlaying) {
                   _videoController.pause();
                 } else {
@@ -58,7 +57,7 @@ class _VideoViewState extends State<VideoView> {
                 isPlaying = !isPlaying;
                 setState(() {});
               },
-              icon: Icon(
+              child: Icon(
                 isPlaying ? Icons.pause_circle : Icons.play_circle,
                 size: 50,
                 color: Colors.white,

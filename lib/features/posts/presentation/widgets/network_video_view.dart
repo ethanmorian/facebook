@@ -21,9 +21,7 @@ class _NetworkVideoViewState extends State<NetworkVideoView> {
   @override
   void initState() {
     _videoController = VideoPlayerController.networkUrl(
-      Uri.parse(
-        widget.videoUrl,
-      ),
+      Uri.parse(widget.videoUrl),
     )..initialize().then((value) {
         setState(() {});
       });
@@ -48,8 +46,8 @@ class _NetworkVideoViewState extends State<NetworkVideoView> {
             bottom: 0,
             left: 0,
             right: 0,
-            child: IconButton(
-              onPressed: () {
+            child: InkWell(
+              onTap: () {
                 if (isPlaying) {
                   _videoController.pause();
                 } else {
@@ -58,7 +56,7 @@ class _NetworkVideoViewState extends State<NetworkVideoView> {
                 isPlaying = !isPlaying;
                 setState(() {});
               },
-              icon: Icon(
+              child: Icon(
                 isPlaying ? Icons.pause_circle : Icons.play_circle,
                 size: 50,
                 color: Colors.white,
