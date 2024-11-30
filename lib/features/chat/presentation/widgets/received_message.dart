@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '/core/constants/app_colors.dart';
 import '/features/chat/models/message.dart';
+import '../../../auth/providers/get_user_info_by_id_provider.dart';
 
 class ReceivedMessage extends ConsumerWidget {
   final Message message;
@@ -16,11 +17,19 @@ class ReceivedMessage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final userInfo = ref.watch(getUserInfoByIdProvider(message.senderId));
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
         children: [
-          RoundProfileTile(url: message.senderId),
+          userInfo.when(
+            data: (user) {
+              return RoundProfileTile(url: user.profilePicUrl);
+            },
+            error: (error, stackTrace) => const Icon(Icons.error),
+            loading: () => const CircularProgressIndicator(),
+          ),
           const SizedBox(width: 15),
           Flexible(
             child: Container(
