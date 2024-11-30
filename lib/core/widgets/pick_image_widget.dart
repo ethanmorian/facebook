@@ -25,19 +25,12 @@ class PickImageWidget extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          image != null
-              ? CircleAvatar(
-                  radius: 50,
-                  backgroundImage: FileImage(
-                    image!,
-                  ),
-                )
-              : const CircleAvatar(
-                  radius: 50,
-                  backgroundImage: NetworkImage(
-                    Constants.maleProfilePic,
-                  ),
-                ),
+          CircleAvatar(
+            radius: 50,
+            backgroundImage: image != null
+                ? FileImage(image!)
+                : const NetworkImage(Constants.maleProfilePic),
+          ),
           const Positioned(
             bottom: 0,
             right: 0,
