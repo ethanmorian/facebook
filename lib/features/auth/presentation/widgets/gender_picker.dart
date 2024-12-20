@@ -1,4 +1,4 @@
-import 'package:facebook/features/auth/presentation/widgets/gender_radio_tile.dart';
+import 'package:flutter_facebook/features/auth/presentation/widgets/gender_radio_tile.dart';
 import 'package:flutter/cupertino.dart';
 
 import '/core/constants/app_colors.dart';

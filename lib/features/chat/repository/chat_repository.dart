@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:facebook/core/constants/firebase_collection_names.dart';
-import 'package:facebook/core/constants/firebase_field_names.dart';
-import 'package:facebook/features/chat/models/chatroom.dart';
-import 'package:facebook/features/chat/models/message.dart';
+import 'package:flutter_facebook/core/constants/firebase_collection_names.dart';
+import 'package:flutter_facebook/core/constants/firebase_field_names.dart';
+import 'package:flutter_facebook/features/chat/models/chatroom.dart';
+import 'package:flutter_facebook/features/chat/models/message.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart' show immutable;

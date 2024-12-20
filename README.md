@@ -1,4 +1,4 @@
-# Facebook
+# flutter_facebook
 
 A Facebook clone app built using the **MVVM pattern** with **Riverpod**, featuring core functionalities like real-time chat, friend requests, and authentication.
 

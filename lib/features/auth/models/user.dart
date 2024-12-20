@@ -1,4 +1,4 @@
-import 'package:facebook/core/constants/firebase_field_names.dart';
+import 'package:flutter_facebook/core/constants/firebase_field_names.dart';
 import 'package:flutter/foundation.dart' show immutable;
 
 @immutable

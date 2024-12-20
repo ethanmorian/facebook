@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:facebook/core/constants/firebase_collection_names.dart';
-import 'package:facebook/core/constants/storage_folder_names.dart';
-import 'package:facebook/core/utils/utils.dart';
-import 'package:facebook/features/auth/models/user.dart';
+import 'package:flutter_facebook/core/constants/firebase_collection_names.dart';
+import 'package:flutter_facebook/core/constants/storage_folder_names.dart';
+import 'package:flutter_facebook/core/utils/utils.dart';
+import 'package:flutter_facebook/features/auth/models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 

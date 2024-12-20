@@ -1,5 +1,5 @@
-import 'package:facebook/features/auth/presentation/screens/create_account_screen.dart';
-import 'package:facebook/features/auth/providers/auth_provider.dart';
+import 'package:flutter_facebook/features/auth/presentation/screens/create_account_screen.dart';
+import 'package:flutter_facebook/features/auth/providers/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

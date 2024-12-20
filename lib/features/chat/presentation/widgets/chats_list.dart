@@ -1,5 +1,5 @@
-import 'package:facebook/core/screens/error_screen.dart';
-import 'package:facebook/core/screens/loader.dart';
+import 'package:flutter_facebook/core/screens/error_screen.dart';
+import 'package:flutter_facebook/core/screens/loader.dart';
 import 'package:facebook/features/chat/presentation/widgets/chat_tile.dart';
 import 'package:facebook/features/chat/providers/get_all_chats_provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';

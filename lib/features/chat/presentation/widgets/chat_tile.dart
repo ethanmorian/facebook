@@ -1,4 +1,4 @@
-import 'package:facebook/core/constants/app_colors.dart';
+import 'package:flutter_facebook/core/constants/app_colors.dart';
 import 'package:facebook/features/auth/providers/get_user_info_by_id_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

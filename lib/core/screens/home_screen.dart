@@ -1,6 +1,6 @@
-import 'package:facebook/core/constants/app_colors.dart';
-import 'package:facebook/core/constants/constants.dart';
-import 'package:facebook/core/widgets/round_icon_button.dart';
+import 'package:flutter_facebook/core/constants/app_colors.dart';
+import 'package:flutter_facebook/core/constants/constants.dart';
+import 'package:flutter_facebook/core/widgets/round_icon_button.dart';
 import 'package:facebook/features/chat/presentation/screens/chats_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

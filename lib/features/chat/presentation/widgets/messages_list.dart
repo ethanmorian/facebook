@@ -1,5 +1,5 @@
-import 'package:facebook/core/screens/error_screen.dart';
-import 'package:facebook/core/screens/loader.dart';
+import 'package:flutter_facebook/core/screens/error_screen.dart';
+import 'package:flutter_facebook/core/screens/loader.dart';
 import 'package:facebook/features/chat/presentation/widgets/received_message.dart';
 import 'package:facebook/features/chat/presentation/widgets/sent_message.dart';
 import 'package:facebook/features/chat/providers/chat_provider.dart';

@@ -1,5 +1,5 @@
-import 'package:facebook/features/chat/presentation/widgets/message_contents.dart';
-import 'package:facebook/features/posts/presentation/widgets/round_profile_tile.dart';
+import 'package:flutter_facebook/features/chat/presentation/widgets/message_contents.dart';
+import 'package:flutter_facebook/features/posts/presentation/widgets/round_profile_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

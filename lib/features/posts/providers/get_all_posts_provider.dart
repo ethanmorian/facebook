@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:facebook/core/constants/firebase_collection_names.dart';
+import 'package:flutter_facebook/core/constants/firebase_collection_names.dart';
 import 'package:facebook/core/constants/firebase_field_names.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

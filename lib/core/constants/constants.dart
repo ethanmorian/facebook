@@ -1,7 +1,7 @@
-import 'package:facebook/core/screens/profile_screen.dart';
-import 'package:facebook/features/friends/presentation/screens/friends_screen.dart';
-import 'package:facebook/features/posts/presentation/screens/posts_screen.dart';
-import 'package:facebook/features/posts/presentation/screens/videos_screen.dart';
+import 'package:flutter_facebook/core/screens/profile_screen.dart';
+import 'package:flutter_facebook/features/friends/presentation/screens/friends_screen.dart';
+import 'package:flutter_facebook/features/posts/presentation/screens/posts_screen.dart';
+import 'package:flutter_facebook/features/posts/presentation/screens/videos_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/setting_screen.dart';

@@ -1,9 +1,9 @@
-import 'package:facebook/core/constants/app_colors.dart';
-import 'package:facebook/core/screens/loader.dart';
-import 'package:facebook/core/utils/utils.dart';
-import 'package:facebook/features/chat/presentation/widgets/chats_user_info.dart';
-import 'package:facebook/features/chat/presentation/widgets/messages_list.dart';
-import 'package:facebook/features/chat/providers/chat_provider.dart';
+import 'package:flutter_facebook/core/constants/app_colors.dart';
+import 'package:flutter_facebook/core/screens/loader.dart';
+import 'package:flutter_facebook/core/utils/utils.dart';
+import 'package:flutter_facebook/features/chat/presentation/widgets/chats_user_info.dart';
+import 'package:flutter_facebook/features/chat/presentation/widgets/messages_list.dart';
+import 'package:flutter_facebook/features/chat/providers/chat_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

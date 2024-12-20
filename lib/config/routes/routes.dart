@@ -1,5 +1,5 @@
-import 'package:facebook/features/chat/presentation/screens/chat_screen.dart';
-import 'package:facebook/features/chat/presentation/screens/chats_screen.dart';
+import 'package:flutter_facebook/features/chat/presentation/screens/chat_screen.dart';
+import 'package:flutter_facebook/features/chat/presentation/screens/chats_screen.dart';
 import 'package:flutter/cupertino.dart';
 
 import '/core/screens/error_screen.dart';

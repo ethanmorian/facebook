@@ -1,14 +1,14 @@
 import 'dart:io';
 
-import 'package:facebook/core/constants/app_colors.dart';
-import 'package:facebook/core/constants/constants.dart';
-import 'package:facebook/core/utils/utils.dart';
-import 'package:facebook/core/widgets/pick_image_widget.dart';
-import 'package:facebook/core/widgets/round_button.dart';
-import 'package:facebook/core/widgets/round_text_field.dart';
-import 'package:facebook/features/auth/presentation/widgets/birthday_picker.dart';
-import 'package:facebook/features/auth/presentation/widgets/gender_picker.dart';
-import 'package:facebook/features/auth/providers/auth_provider.dart';
+import 'package:flutter_facebook/core/constants/app_colors.dart';
+import 'package:flutter_facebook/core/constants/constants.dart';
+import 'package:flutter_facebook/core/utils/utils.dart';
+import 'package:flutter_facebook/core/widgets/pick_image_widget.dart';
+import 'package:flutter_facebook/core/widgets/round_button.dart';
+import 'package:flutter_facebook/core/widgets/round_text_field.dart';
+import 'package:flutter_facebook/features/auth/presentation/widgets/birthday_picker.dart';
+import 'package:flutter_facebook/features/auth/presentation/widgets/gender_picker.dart';
+import 'package:flutter_facebook/features/auth/providers/auth_provider.dart';
 import 'package:facebook/features/auth/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
